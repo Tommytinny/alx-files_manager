@@ -3,8 +3,6 @@ import UsersController from '../controllers/UsersController';
 import AuthController from '../controllers/AuthController';
 import FilesController from '../controllers/FilesController';
 
-
-
 const allRoutes = (app) => {
   app.get('/status', AppController.getStatus);
   app.get('/stats', AppController.getStats);
