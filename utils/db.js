@@ -25,27 +25,17 @@ class DBClient {
   }
 
   async nbUsers() {
-    try {
-      const users = this.db.collection('users');
-      const nUsers = await users.countDocuments();
-      return nUsers;
-    } catch (err) {
-      return err;
-    } finally {
-      await this.client.close();
-    }
+    await this.client.connect();
+    const users = this.db.collection('users');
+    const nUsers = await users.countDocuments();
+    return nUsers;
   }
 
   async nbFiles() {
-    try {
-      const files = this.db.collection('files');
-      const nFiles = await files.countDocuments();
-      return nFiles;
-    } catch (err) {
-      return err;
-    } finally {
-      await this.client.close();
-    }
+    await this.client.connect();
+    const files = this.db.collection('files');
+    const nFiles = await files.countDocuments();
+    return nFiles;
   }
 }
 
