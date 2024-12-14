@@ -21,7 +21,7 @@ class UsersController {
         const result = await users.insertOne({ email, password: hashedPassword });
         response.status(201).json({ id: result.insertedId, email });
       }
-    } catch(err) {
+    } catch (err) {
       console.log(err);
     }
   }
